@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './App.css';
+import './HeroItem.css';
 import React from 'react';
 
 class HeroItem extends Component {
@@ -7,8 +7,10 @@ class HeroItem extends Component {
   render() {
     return (
       
-      <li>
-        A Hero
+      <li className='HeroItem'>
+        <h2>Hero Name</h2>
+        <image>A Picture</image>
+        <type>Bread</type>
       </li>
       
     

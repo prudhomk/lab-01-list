@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './App.css';
+import './HeroList.css';
 import React from 'react';
 import HeroItem from './HeroItem';
 class HeroList extends Component {
@@ -7,7 +7,7 @@ class HeroList extends Component {
   render() {
     return (
       
-      <ul className="List">
+      <ul className="HeroList">
         <HeroItem/>
       </ul>
       

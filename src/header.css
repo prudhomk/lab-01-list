@@ -1,4 +1,5 @@
 .Header {
     background-color: tan;
+    display: grid;
     justify-content: center;
 }

@@ -1,4 +1,5 @@
 .Footer {
+  display: grid;
   background-color: tan;
   justify-content: center;
 }
