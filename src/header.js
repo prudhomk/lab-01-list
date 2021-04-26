@@ -6,11 +6,11 @@ class Header extends Component {
 
   render() {
     return (
-      <>
-        <header className="Header">
-          <h1>Hall of Heroes</h1>
-        </header>
-      </>
+      
+      <header className="Header">
+        <h1>Hall of Heroes</h1>
+      </header>
+      
     
     );
   }
