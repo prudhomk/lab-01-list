@@ -1,4 +1,4 @@
-const heroes = [ 
+const Heroes = [ 
   
   {
     name: 'Anpanman',
@@ -39,4 +39,4 @@ const heroes = [
 
 ];
 
-export default heroes;
+export default Heroes;
