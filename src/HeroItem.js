@@ -5,12 +5,13 @@ import React from 'react';
 class HeroItem extends Component {
 
   render() {
+    const hero = this.props.hero;
+    console.log(hero);
     return (
-      
       <li className='HeroItem'>
-        <h2>Hero Name</h2>
-        <image>A Picture</image>
-        <type>Bread</type>
+        <h2>{hero.name}</h2>
+        <img src={hero.url} alt={hero.name}/>
+        <p>Type: {hero.type}</p>
       </li>
       
     

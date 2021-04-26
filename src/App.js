@@ -4,20 +4,23 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import HeroList from './HeroList';
-class Hero extends Component {
+import heroes from './Data';
+class App extends Component {
 
   render() {
     return ( 
-      <>
+      <div className='App'>
         <Header/>
+
         <main>
-          <HeroList/>
+          <HeroList heroes={heroes}/>
         </main>
+
         <Footer/>
-      </>
+      </div>
     );
   }
 
 }
 
-export default Hero;
+export default App;

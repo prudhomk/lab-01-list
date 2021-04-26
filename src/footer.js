@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       
       <footer className="Footer">
-        <h1>Thanks for stopping By!</h1>
+        <h3>Thanks for stopping By!</h3>
       </footer>
       
     

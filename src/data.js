@@ -1,42 +1,69 @@
-const Heroes = [ 
+const heroes = [ 
   
   {
     name: 'Anpanman',
-    type: 'bread',
-    image: './public/assets/anpanman.png'
+    url: './anpanman.webp',
+    type: 'bread'
+    
 
   },
   {
     name: 'Baikinman',
-    type: 'bacteria',
-    image: './public/assets/baikinman.png'
+    url: './baikinman.png',
+    type: 'bacteria'
+   
 
   },
   {
     name: 'Shokupanman',
-    type: 'bread',
-    image: './public/assets/shokupanman.png'
+    url: './shokupanman.webp',
+    type: 'bread'
+    
 
   },
   {
     name: 'Hamburger The Kid',
-    type: 'hamburger',
-    image: './public/assets/hamburger.png'
+    url: './hamburger.png',
+    type: 'hamburger'
+    
 
   },
   {
     name: 'Currypanman',
-    type: 'bread',
-    image: './public/assets/currypanman.png'
+    url: './currypanman.webp',
+    type: 'bread'
+    
 
   },
   {
     name: 'Omusubiman',
-    type: 'rice',
-    image: './public/assets/omusubiman.png'
+    url: './omusubiman.png',
+    type: 'rice'
+    
+
+  },
+  {
+    name: 'Horrorman',
+    url: './horrorman.webp',
+    type: 'bone'
+    
+
+  },
+  {
+    name: 'Melonpanna',
+    url: './melonpanna.webp',
+    type: 'bread'
+    
+
+  },
+  {
+    name: 'Cheese',
+    url: './cheese.webp',
+    type: 'dog'
+    
 
   },
 
 ];
 
-export default Heroes;
+export default heroes;

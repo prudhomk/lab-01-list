@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       
       <header className="Header">
-        <h1>Hall of Heroes</h1>
+        <h1>Anpanman Characters</h1>
       </header>
       
     
