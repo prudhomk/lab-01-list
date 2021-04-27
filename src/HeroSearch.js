@@ -2,11 +2,10 @@ import { Component } from 'react';
 import './HeroSearch.css';
 import React from 'react';
 
-export default class HeroSearch extends Component {
+export class HeroSearch extends Component {
   state = {
     nameFilter: '',
-    sortField: '',
-    typeFilter: ''
+    sortField: ''
   }
 
   handleNameChange = ({ target }) => {
@@ -17,26 +16,38 @@ export default class HeroSearch extends Component {
     this.setState({ sortField: target.value });
   }
 
-  handleTypeChange = ({ target }) => {
-    this.setState({ typeFilter: target.value });
-  }
-
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.onSearch(this.state);
   }
 
+  componentDidUpdate(prevProp, prevState) {
+    if (prevState !== this.state) {
+      this.props.onSearch(this.state);
+    }
+  }
+
   render() {
-    const { nameFilter, sortField, typeFilter } = this.state;
-    const { types } = this.props;
+    const { nameFilter, sortField } = this.state;
     
+
     return (
       <form className="HeroSearch">
-        <input/>
-        <select name="sortField">
-          <option value="name">sort by name</option>
-          <option value="type">sort by type</option>
+        <input
+          name="nameFilter"
+          value={nameFilter}
+          onChange={this.handleNameChange}
+        />
+
+        <select 
+          name="sortField"
+          value={sortField}
+          onChange={this.handleSearchChange}
+        >
+          <option value="name">by name</option>
+          <option value="type">by type</option>
         </select>
+
         <button>Search!</button>
       </form>
     
