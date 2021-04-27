@@ -4,10 +4,12 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import HeroList from './HeroList';
+
 import heroes from './data';
 import HeroSearch from './HeroSearch';
 
 const heroTypes = [...new Set(heroes.map(h => h.type))];
+
 
 class App extends Component {
   state = {
@@ -42,6 +44,7 @@ class App extends Component {
         
         <HeroSearch types={heroTypes} onSearch={this.handleSearch}/>
         
+
         <main>
           <HeroList heroes={heroes}/>
         </main>
