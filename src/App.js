@@ -5,7 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import HeroList from './HeroList';
 import heroes from './data.js';
-import HeroSearch from './HeroSearch';
+//import HeroSearch from './HeroSearch';
 
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
     return ( 
       <div className='App'>
         <Header/>
-        <HeroSearch/>
+        {/* <HeroSearch/> */}
         <main>
           <HeroList heroes={heroes}/>
         </main>
