@@ -5,7 +5,8 @@ import React from 'react';
 export class HeroSearch extends Component {
   state = {
     nameFilter: '',
-    sortField: ''
+    sortField: '',
+    typeFilter: ''
   }
 
   handleNameChange = ({ target }) => {
@@ -14,6 +15,10 @@ export class HeroSearch extends Component {
 
   handleSearchChange = ({ target }) => {
     this.setState({ sortField: target.value });
+  }
+
+  handleTypeChange = ({ target }) => {
+    this.setState({ typeFilter: target.value });
   }
 
   handleSubmit = (e) => {
@@ -28,8 +33,8 @@ export class HeroSearch extends Component {
   }
 
   render() {
-    const { nameFilter, sortField } = this.state;
-    
+    const { nameFilter, sortField, typeFilter } = this.state;
+    const { types } = this.props;
 
     return (
       <form className="HeroSearch">
@@ -44,10 +49,20 @@ export class HeroSearch extends Component {
           value={sortField}
           onChange={this.handleSearchChange}
         >
+          <option value="">sort...</option>
           <option value="name">by name</option>
-          <option value="type">by type</option>
         </select>
 
+        <select
+          name="typefilter"
+          value={typeFilter}
+          onChange={this.handleTypeChange}
+        >
+          <option value="">All</option>
+          {types.map(type => (
+            <option key={type} value={type}>{type}</option>
+          ))}
+        </select>
         <button>Search!</button>
       </form>
     

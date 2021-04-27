@@ -1,8 +1,21 @@
 .HeroSearch {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 0;
   background-color: yellow;
   height: 30px;
+}
+
+.HeroSearch input {
+  margin: 5px;
+}
+
+.HeroSearch select {
+  margin: 5px;
+}
+
+.HeroSearch button {
+  cursor: pointer;
 }

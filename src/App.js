@@ -14,12 +14,15 @@ class App extends Component {
     heroes: heroes
   }
 
-  handleSearch = ({ nameFilter, sortField }) => {
+  handleSearch = ({ nameFilter, sortField, typeFilter }) => {
     const nameRegex = new RegExp(nameFilter, 'i');
 
     const searchedData = heroes
       .filter(hero => {
         return !nameFilter || hero.name.match(nameRegex);
+      })
+      .filter(hero => {
+        return !typeFilter || hero.type === typeFilter;
       })
       .sort((a, b) => {
         if (a[sortField] < b[sortField]) return -1;
