@@ -2,9 +2,34 @@ import { Component } from 'react';
 import './HeroSearch.css';
 import React from 'react';
 
-class HeroSearch extends Component {
+export default class HeroSearch extends Component {
+  state = {
+    nameFilter: '',
+    sortField: '',
+    typeFilter: ''
+  }
+
+  handleNameChange = ({ target }) => {
+    this.setState({ nameFilter: target.value });
+  }
+
+  handleSearchChange = ({ target }) => {
+    this.setState({ sortField: target.value });
+  }
+
+  handleTypeChange = ({ target }) => {
+    this.setState({ typeFilter: target.value });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.onSearch(this.state);
+  }
 
   render() {
+    const { nameFilter, sortField, typeFilter } = this.state;
+    const { types } = this.props;
+    
     return (
       <form className="HeroSearch">
         <input/>

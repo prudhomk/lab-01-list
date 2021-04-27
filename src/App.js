@@ -4,7 +4,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import HeroList from './HeroList';
-import heroes from './Data';
+import heroes from './data';
 import HeroSearch from './HeroSearch';
 
 class App extends Component {
