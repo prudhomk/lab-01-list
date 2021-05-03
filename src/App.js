@@ -10,6 +10,7 @@ import request from 'superagent';
 
 
 
+
 class App extends Component {
   state = {
     heroes: [],
@@ -51,6 +52,7 @@ class App extends Component {
         
         <HeroSearch onSearch={this.handleSearch} types={heroTypes}/>
         
+
         <main>
           <HeroList heroes={heroes}/>
         </main>
