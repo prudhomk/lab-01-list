@@ -4,22 +4,30 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import HeroList from './HeroList';
-
-import heroes from './data';
 import HeroSearch from './HeroSearch';
+import request from 'superagent';
 
-const heroTypes = [...new Set(heroes.map(h => h.type))];
+
+
 
 
 class App extends Component {
   state = {
-    heroes: heroes
+    heroes: [],
+    heroTypes: []
   }
 
-  handleSearch = ({ nameFilter, sortField, typeFilter }) => {
+  componentDidMount() {
+    this.handleSearch({});
+    
+  }
+ 
+  handleSearch = async ({ nameFilter, sortField, typeFilter }) => {
     const nameRegex = new RegExp(nameFilter, 'i');
 
-    const searchedData = heroes
+    const response = await request.get('https://lab-06-server.herokuapp.com/api/heroes');
+    const heroTypes = [...new Set(response.body.map(hero => hero.type))];
+    const searchedData = response.body
       .filter(hero => {
         return !nameFilter || hero.name.match(nameRegex);
       })
@@ -32,17 +40,17 @@ class App extends Component {
         return 0;
       });
 
-    this.setState({ heroes: searchedData });
+    this.setState({ heroes: searchedData, heroTypes: heroTypes });
   }
   render() {
-    const { heroes } = this.state;
+    const { heroes, heroTypes } = this.state;
 
     return ( 
       <div className='App'>
         
         <Header/>
         
-        <HeroSearch types={heroTypes} onSearch={this.handleSearch}/>
+        <HeroSearch onSearch={this.handleSearch} types={heroTypes}/>
         
 
         <main>
